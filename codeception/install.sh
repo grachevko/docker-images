@@ -2,5 +2,5 @@
 
 docker pull preemiere/codeception
 
-sudo cp codecept /usr/local/bin/
-sudo chmod a+x /usr/local/bin/codecept
+cp codecept /usr/local/bin/
+chmod a+x /usr/local/bin/codecept
