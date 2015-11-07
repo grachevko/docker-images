@@ -18,5 +18,11 @@ docker run -i \
 git clone https://github.com/preemiere/docker-images.git && sudo ./docker-images/codeception/install.sh
 ```
 
+# Usage
+After quick install, move to project dir then type command you need
+```bash
+codecept --help
+```
+
 ### Get this image
 [Docker Hub Registry](https://hub.docker.com/r/preemiere/codeception/).
