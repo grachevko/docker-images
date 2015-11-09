@@ -1,4 +1,4 @@
-FROM php:cli
+FROM php:7-cli
 
 MAINTAINER Konstantin Grachev <preemiere@ya.ru>
 
