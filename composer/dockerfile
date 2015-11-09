@@ -1,0 +1,16 @@
+FROM php:7-cli
+
+MAINTAINER Konstantin Grachev <preemiere@ya.ru>
+
+RUN apt-get update && apt-get install -y zlib1g-dev --no-install-recommends && rm -r /var/lib/apt/lists/*
+RUN docker-php-ext-install zip
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+VOLUME ["/app", '/usr/local/src/composer']
+
+ENV COMPOSER_HOME /usr/local/src/composer
+
+ENTRYPOINT ["composer", "--ignore-platform-reqs"]
+
+CMD ["--help"]
