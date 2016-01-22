@@ -6,9 +6,8 @@
 ### Usage
 
 ```bash
-docker run \
-    --rm \
-	-v $HOME/.composer:/usr/local/src/composer \
+docker run --rm -t \
+	-v $HOME/.composer:/var/lib/composer \
 	-v $(pwd):/app \
 	-w /app \
 	preemiere/composer $*
