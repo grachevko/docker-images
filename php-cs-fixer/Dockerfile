@@ -1,8 +1,9 @@
-FROM php:cli
+FROM php
+
+MAINTAINER Konstantin Grachev <ko@grachev.io>
 
 ADD http://get.sensiolabs.org/php-cs-fixer.phar /usr/local/bin/php-cs-fixer
 RUN chmod a+x /usr/local/bin/php-cs-fixer
 
 ENTRYPOINT ["php-cs-fixer"]
-
 CMD ["--help"]
