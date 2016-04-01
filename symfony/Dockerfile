@@ -2,6 +2,9 @@ FROM php:alpine
 
 MAINTAINER Konstantin Grachev <ko@grachev.io>
 
-ADD https://phar.phpunit.de/phpunit.phar /usr/local/bin/phpunit
+ADD https://symfony.com/installer /usr/local/bin/symfony
 
-RUN chmod +x /usr/local/bin/phpunit
+RUN chmod +x /usr/local/bin/symfony
+
+ENTRYPOINT ["symfony"]
+CMD ["--help"]
