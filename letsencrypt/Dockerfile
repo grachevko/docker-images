@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install git \
     && /app/letsencrypt-auto --help \
     && apt-get autoremove -y && apt-get autoclean -y
 
-ENTRYPOINT /app/letsencrypt-auto
+ENV PATH /app:${PATH}
