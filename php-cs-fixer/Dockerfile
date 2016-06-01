@@ -1,4 +1,4 @@
-FROM php
+FROM php:alpine
 
 MAINTAINER Konstantin Grachev <ko@grachev.io>
 
