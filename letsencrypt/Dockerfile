@@ -2,9 +2,9 @@ FROM python
 
 MAINTAINER Konstantin Grachev <ko@grachev.io>
 
-RUN apt-get update && apt-get install git \
-    && git clone https://github.com/letsencrypt/letsencrypt /app \
-    && /app/letsencrypt-auto --help \
-    && apt-get autoremove -y && apt-get autoclean -y
+ADD https://dl.eff.org/certbot-auto /usr/local/bin/certbot-auto
+RUN set -ex \
+    && chmod a+x /usr/local/bin/certbot-auto \
+    && sleep 1 \
+    && certbot-auto --noninteractive --os-packages-only
 
-ENV PATH /app:${PATH}
