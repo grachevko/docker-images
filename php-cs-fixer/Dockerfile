@@ -1,9 +1,13 @@
 FROM php:alpine
 
-MAINTAINER Konstantin Grachev <ko@grachev.io>
+MAINTAINER Konstantin Grachev <me@grachevko.ru>
 
-ADD http://get.sensiolabs.org/php-cs-fixer.phar /usr/local/bin/php-cs-fixer
-RUN chmod a+x /usr/local/bin/php-cs-fixer
+ENV FIXER_VERSION v1.12.2
+
+RUN set -ex \
+	&& cd /usr/bin \
+	&& curl -fSL "https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/$FIXER_VERSION/php-cs-fixer.phar" -o php-cs-fixer \
+    && chmod a+x php-cs-fixer
 
 ENTRYPOINT ["php-cs-fixer"]
 CMD ["--help"]
