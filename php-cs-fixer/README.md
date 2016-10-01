@@ -1,25 +1,21 @@
-# PHP Coding Standards Fixer
+PHP Coding Standards Fixer
+--------------------------
 
 > The PHP Coding Standards Fixer tool fixes most issues in your code when you want to follow the PHP coding standards as defined in the PSR-1 and PSR-2 documents. 
-> http://cs.sensiolabs.org/
+> https://github.com/FriendsOfPHP/PHP-CS-Fixer
 
-### Usage
+Usage
+-----
 
-```bash
-docker run \
---rm \
--v $(pwd):/app \
--w /app \
-preemiere/php-cs-fixer $@
+```sh
+$ docker run --rm -v `pwd`:`pwd` -w `pwd` grachev/php-cs-fixer --level=symfony fix ./src
 ``` 
 
-### phpstorm external-tool setting
+phpstorm external-tool setting
+------------------------------
 
-Parameters: 
-```
---level=symfony --verbose fix $FileRelativePath$
-```
-Working directory: 
-```
-$ProjectFileDir$
-```
+Program: ```docker```
+
+Parameters: ```run --rm  -v $ProjectFileDir$:$ProjectFileDir$  -w $ProjectFileDir$  grachev/php-cs-fixer --level=symfony fix $FileRelativePath$ ```
+
+Working directory: ```$ProjectFileDir$```
