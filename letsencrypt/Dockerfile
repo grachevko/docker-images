@@ -1,8 +1,8 @@
 FROM alpine
 
-MAINTAINER Konstantin Grachev <ko@grachev.io>
+MAINTAINER Konstantin Grachev <me@grachevko.ru>
 
-RUN set -ex apk add --no-cache certbot
+RUN apk add --no-cache certbot
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
