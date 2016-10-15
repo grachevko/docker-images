@@ -12,7 +12,7 @@ do
     COMMAND="${COMMAND} -d $item".${LE_HOST}
 done
 
-exec "$COMMAND"
+/bin/sh -c "${COMMAND}"
 
 if [ ! -z "$LE_CERT_PATH" ]; then
     cd /etc/letsencrypt/live/${LE_HOST}
