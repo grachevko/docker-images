@@ -1,10 +1,9 @@
-FROM python
+FROM alpine
 
 MAINTAINER Konstantin Grachev <ko@grachev.io>
 
-ADD https://dl.eff.org/certbot-auto /usr/local/bin/certbot-auto
-RUN set -ex \
-    && chmod a+x /usr/local/bin/certbot-auto \
-    && sleep 1 \
-    && certbot-auto --noninteractive || true
+RUN set -ex apk add --no-cache certbot
 
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["docker-entrypoint.sh"]
