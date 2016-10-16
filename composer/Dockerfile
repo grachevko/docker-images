@@ -1,6 +1,6 @@
 FROM php:alpine
 
-MAINTAINER Konstantin Grachev <ko@grachev.io>
+MAINTAINER Konstantin Grachev <me@grachevko.ru>
 
 RUN apk add --update git zlib1g-dev \
     && docker-php-ext-install zip mbstring \

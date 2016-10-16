@@ -1,6 +1,6 @@
 FROM php:alpine
 
-MAINTAINER Konstantin Grachev <ko@grachev.io>
+MAINTAINER Konstantin Grachev <me@grachevko.ru>
 
 ADD https://symfony.com/installer /usr/local/bin/symfony
 
