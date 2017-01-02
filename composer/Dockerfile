@@ -1,6 +1,6 @@
 FROM php:alpine
 
-ENV COMPOSER_HOME /var/lib/composer \
+ENV COMPOSER_HOME=/var/lib/composer \
     COMPOSER_CACHE_DIR=/var/cache/composer \
     COMPOSER_ALLOW_SUPERUSER=1
 
