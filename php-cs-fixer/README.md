@@ -16,6 +16,6 @@ phpstorm external-tool setting
 
 Program: ```docker```
 
-Parameters: ```run --rm  -v $ProjectFileDir$:$ProjectFileDir$  -w $ProjectFileDir$  grachev/php-cs-fixer --level=symfony fix $FileRelativePath$ ```
+Parameters: ```run --rm  -v $ProjectFileDir$:$ProjectFileDir$  -w $ProjectFileDir$  grachev/php-cs-fixer fix --rues=@Symfony  $FileRelativePath$ ```
 
 Working directory: ```$ProjectFileDir$```
