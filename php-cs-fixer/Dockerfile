@@ -2,7 +2,7 @@ FROM php:alpine
 
 MAINTAINER Konstantin Grachev <me@grachevko.ru>
 
-ENV FIXER_VERSION v2.0.0
+ENV FIXER_VERSION v2.1.0
 
 RUN set -ex \
 	&& cd /usr/bin \
