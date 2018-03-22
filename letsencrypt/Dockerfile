@@ -1,9 +1,11 @@
-FROM alpine:3.6
+FROM debian:stretch-backports
 
 MAINTAINER Konstantin Grachev <me@grachevko.ru>
 
-RUN apk add --no-cache certbot
+RUN set -ex \
+	&& apt-get update \
+	&& apt-get install -y --no-install-recommends certbot -t stretch-backports
 
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
